@@ -1,13 +1,12 @@
-//function for the computer choice
 function getComputerChoice(){
 
 const list = ["rock", "paper", "scissor"];
-const index = Math.floor(Math.random() * list.length);
+const index = Math.floor(Math.random() * list.length); //Choice a random index and print it
 return list[index];
 }
-//function for the human choice
+
 function getHumanChoice(){
-    const message = prompt("Write something").toLowerCase();
+    const message = prompt("Choice: Paper, rock or scissor").toLowerCase();
 
     if (message === "rock"|| message === "paper" || message === "scissor"){
         return message;
@@ -15,7 +14,7 @@ function getHumanChoice(){
         return null;
     }
 }
-//Function for do the validation
+
 function playRound(computerChoice, humanChoice){
     computerChoice = computerChoice.toLowerCase();
     humanChoice = humanChoice.toLowerCase();
@@ -23,7 +22,7 @@ function playRound(computerChoice, humanChoice){
 
    if (!validOption.includes(computerChoice) || !validOption.includes(humanChoice)){
     return "Invalid options";
-}
+    }
 
    if (computerChoice === humanChoice){
     return "It is a tie!!";
@@ -35,7 +34,7 @@ function playRound(computerChoice, humanChoice){
     return "Human wins";
    }
 }
-//Function for 5 round and decide who is the winner
+//Run 5 rounds. Calculate the score and decide who is the winner 
 function playGame(){
     let humanScore = 0;
     let computerScore = 0;
